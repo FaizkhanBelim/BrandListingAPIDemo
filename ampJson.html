@@ -90,11 +90,12 @@
 
         p {
             font-size: 10px;
+            overflow: hidden;
         }
 
-        * {
+        /* * {
             box-sizing: border-box;
-        }
+        } */
 
         .column {
             float: left;
@@ -116,7 +117,7 @@
             text-align: center;
         }
 
-       
+
 
         .headerbar {
             height: 50px;
@@ -143,6 +144,11 @@
             text-decoration: none;
         }
 
+        .priceTitle {
+            margin-left: 115px;
+            margin-top: -18px;
+        }
+
         /* MEDIA QUERY START */
 
         @media only screen and (max-width:500px) {
@@ -165,6 +171,11 @@
                 margin-left: 10px;
                 line-height: 1;
             }
+
+            .priceTitle {
+                margin-left: 115px;
+                margin-top: -18px;
+            }
         }
 
         @media only screen and (max-width:800px) {
@@ -174,18 +185,22 @@
                 width: 0;
                 padding: 0;
             }
+
             .column {
                 float: left;
-                width: 33%;
+                width: 44%;
                 padding: 5px;
             }
+
             .titleItem {
                 font-size: 15px;
                 margin-left: 10px;
                 line-height: 1;
             }
-            .furigana {
-                margin-left: 8px;
+
+            .priceTitle {
+                margin-left: 115px;
+                margin-top: -18px;
             }
         }
 
@@ -200,7 +215,7 @@
 
             .column {
                 float: left;
-                width: 33%;
+                width: 44%;
                 padding: 5px;
             }
         }
@@ -221,56 +236,38 @@
 
             {{#hits.hits}}
             {{#_source}}
-            {{#attributes}}
-            {{#product_info}}
-            {{#laundry}}
-            {{#compositions}}
-            {{#size_info}}
-            {{#access_policy}}
-            {{#categories}}
-            {{#attributes}}
-            {{#categories}}
-            {{#attributes}}
-            {{#categories}}
-            {{#attributes}}
-            {{#brand}}
+
+            {{#sku}}
+            <!-- {{#prices}}
+                {{price_ex_vat}}
+                <div class="brandname">{{prices.[0].price_ex_vat}}</div>
+            {{/prices}} -->
+            {{/sku}}
+            <!-- <div class="brandname">{{sku[0].prices[0].price_ex_vat}}</div> -->
+
+            {{#images}}
             <div class="row">
                 <a href="brandDetail.html">
-                <div class="column">
-                    <amp-img src="{{image_url}}" width="235" height="200" layout="responsive"></amp-img></a>
-                    <span class="titleItem">{{brand_name}}</span>
-                    <div class="furigana">
-                            {{#attributes}}
-                            {{furigana}}
-                            {{/attributes}}
-                    </div>
-                </div>
+                    <div class="column">
+                        <amp-img src="{{image_url}}" width="235" height="200" layout="responsive"></amp-img>
+                </a>
+                <div class="brandname">{{brand.brand_name}}</div>
+                <div class="brandname">{{.price_ex_vat}}</div>
+                <!-- <div class="priceTitle">5,000</div> -->
+                <p>{{item_name}}</p>
             </div>
-
-            {{/brand}}
-            {{/attributes}}
-            {{/categories}}
-            {{/attributes}}
-            {{/categories}}
-            {{/attributes}}
-            {{/categories}}
-            {{/access_policy}}
-            {{/size_info}}
-            {{/compositions}}
-            {{/laundry}}
-            {{/product_info}}
-            {{/attributes}}
-
+            </div>
+            {{/images}}
+            <!-- {{^images}}
+            </div>
+            {{/images}} -->
+            <!-- {{#sku}}
+            {{#prices}}
+                {{price_ex_vat}}
+            {{/prices}}
+            {{/sku}} -->
             {{/_source}}
-            {{#attributes}}
-            {{yoyaku_kaishi_nichiji}}
-            {{/attributes}}
-            {{#attributes}}
-            {{image_url}}
-            {{/attributes}}
-            {{size_chart_image_url}}
             {{/hits.hits}}
-
         </template>
     </amp-list>
 
