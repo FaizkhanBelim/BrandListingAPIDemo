@@ -1,0 +1,279 @@
+<!doctype html>
+<html ⚡>
+
+<head>
+    <meta charset="utf-8">
+    <title>amp-list</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-list/index.html">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+    </style><noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <style amp-custom>
+        body {
+            font-family: sans-serif;
+        }
+
+        h1 {
+            font-family: serif;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-size: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 30%;
+            padding: 20px;
+            border: 5px solid white;
+            color: black;
+        }
+
+        .site-name {
+            flex: 1;
+            margin-left: -36px;
+        }
+
+        header {
+            background-color: #241754;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+
+       
+
+        .headerbar {
+            height: 50px;
+            z-index: 999;
+            top: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+            padding: 5px;
+        }
+
+        .titleItem {
+            font-size: 12px;
+            line-height: 1;
+        }
+
+        .name {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* MEDIA QUERY START */
+
+        @media only screen and (max-width:500px) {
+
+            /* For mobile phones: */
+            .menu,
+            .column,
+            .right {
+                width: 50%;
+            }
+
+            .column {
+                float: left;
+                width: 33%;
+                padding: 5px;
+            }
+
+            .titleItem {
+                font-size: 15px;
+                margin-left: 10px;
+                line-height: 1;
+            }
+        }
+
+        @media only screen and (max-width:800px) {
+
+            /* For tablets: */
+            .column {
+                width: 0;
+                padding: 0;
+            }
+            .column {
+                float: left;
+                width: 33%;
+                padding: 5px;
+            }
+            .titleItem {
+                font-size: 15px;
+                margin-left: 10px;
+                line-height: 1;
+            }
+            .furigana {
+                margin-left: 8px;
+            }
+        }
+
+        @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {
+
+            /* Styles */
+            .menu,
+            .column,
+            .right {
+                width: 100%;
+            }
+
+            .column {
+                float: left;
+                width: 33%;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="headerbar">
+        <div class="site-name" role="button" on="tap:sidebar1.toggle" tabindex="0">
+            <a href="brandDetail.html" class="name">Brand Listing Page</a>
+        </div>
+    </header>
+    <amp-list layout="fixed-height" height="100" src="http://localhost:8000/brand_products.json"
+        [src]="emptyListSampleSrc || 'http://localhost:8000/brand_products.json'" single-item items="." reset-on-refresh
+        binding="no">
+
+        <template type="amp-mustache">
+
+            {{#hits.hits}}
+            {{#_source}}
+            {{#attributes}}
+            {{#product_info}}
+            {{#laundry}}
+            {{#compositions}}
+            {{#size_info}}
+            {{#access_policy}}
+            {{#categories}}
+            {{#attributes}}
+            {{#categories}}
+            {{#attributes}}
+            {{#categories}}
+            {{#attributes}}
+            {{#brand}}
+            <div class="row">
+                <a href="brandDetail.html">
+                <div class="column">
+                    <amp-img src="{{image_url}}" width="235" height="200" layout="responsive"></amp-img></a>
+                    <span class="titleItem">{{brand_name}}</span>
+                    <div class="furigana">
+                            {{#attributes}}
+                            {{furigana}}
+                            {{/attributes}}
+                    </div>
+                </div>
+            </div>
+
+            {{/brand}}
+            {{/attributes}}
+            {{/categories}}
+            {{/attributes}}
+            {{/categories}}
+            {{/attributes}}
+            {{/categories}}
+            {{/access_policy}}
+            {{/size_info}}
+            {{/compositions}}
+            {{/laundry}}
+            {{/product_info}}
+            {{/attributes}}
+
+            {{/_source}}
+            {{#attributes}}
+            {{yoyaku_kaishi_nichiji}}
+            {{/attributes}}
+            {{#attributes}}
+            {{image_url}}
+            {{/attributes}}
+            {{size_chart_image_url}}
+            {{/hits.hits}}
+
+        </template>
+    </amp-list>
+
+</body>
+
+</html>
