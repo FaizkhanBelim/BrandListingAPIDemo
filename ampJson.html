@@ -8,7 +8,8 @@
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <link rel="canonical" href="https://amp.dev/documentation/examples/components/amp-list/index.html">
+    <script async custom-element="amp-live-list" src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"></script>
+    <link rel="canonical" href="ampJson.html">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>
@@ -103,11 +104,11 @@
         }
 
         .column {
-            float: left;
-            width: 30%;
+            width: 29%;
             padding: 20px;
             border: 5px solid white;
             color: black;
+            float: left;
         }
 
         .site-name {
@@ -131,12 +132,6 @@
             width: 100%;
             display: flex;
             align-items: center;
-        }
-
-        .column {
-            float: left;
-            width: 46%;
-            padding: 5px;
         }
 
         .titleItem {
@@ -324,6 +319,7 @@
             <a href="brandDetail.html" class="name">Brand Listing Page</a>
         </div>
     </header>
+    
     <amp-list layout="fixed-height" height="100" src="http://localhost:8000/brand_products.json"
         [src]="emptyListSampleSrc || 'http://localhost:8000/brand_products.json'" single-item items="." reset-on-refresh
         binding="no">
