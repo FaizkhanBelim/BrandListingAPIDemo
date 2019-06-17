@@ -8,8 +8,10 @@
     <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <script async custom-element="amp-live-list" src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"></script>
+    <!-- <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script> -->
     <link rel="canonical" href="ampJson.html">
+    <!-- <script type="text/javascript" src="app.js"></script> -->
+    <meta name="amp-experiment-token" content="AAAAAFd7Im9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCIsImV4cGVyaW1lbnQiOiJhbXAtc2NyaXB0IiwiZXhwaXJhdGlvbiI6MTg5NjEzNDQwMDAwMH08Wb1WA4ZcsTLNK1pxwXdmfYUlv4ybtfIMw3yS66dZhsJl11JYrTanag4ZlAr4sfBRTVmQfKLsiJq/JJHdrpRzT9M6EQD/JYos1SlohtQiK2YfhvXgN7zot3WBuFkqoxSiyvX/l23UYKSo2ebNTnMDFhI+yrX8uc9BblbYniRtQGXBPktjJUIgavEBS5t45bgbPNutNvAreYGlz7na4lImrpnNa8K28Ow4hqOxcqqdFoHD9hlwtKlpydJQpEmtM+S+jdDLKWq6JtC+HoUSovuitrqkioJ4cfuVkFqtoaKWPLXSOwoc5UJl3zNjlTjvQ/Gnk33NdWs6/FtZbxCq+lWe">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>
@@ -81,11 +83,11 @@
     </noscript>
     <style amp-custom>
         body {
-            font-family: sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
         }
 
         h1 {
-            font-family: serif;
+            font-family: 'Noto Sans JP', sans-serif;
             margin-bottom: 0;
         }
 
@@ -104,10 +106,7 @@
         }
 
         .column {
-            width: 29%;
-            padding: 20px;
             border: 5px solid white;
-            color: black;
             float: left;
         }
 
@@ -175,11 +174,12 @@
             }
 
             .priceTitle {
-                margin-left: 135px;
-                margin-top: -18px;
+                margin-left: 97px;
+                margin-top: -17px;
                 white-space: pre;
-                font-family: Lato, sans-serif;
+                font-family: 'Noto Sans JP', sans-serif;
                 font-size: 14px;
+                font-weight: 900;
             }
 
             .brandname {
@@ -209,7 +209,7 @@
                 height: 18px;
                 line-height: 18px;
                 color: #fff;
-                font-family: Lato, sans-serif;
+                font-family: 'Noto Sans JP', sans-serif;
                 font-size: 11px;
                 font-weight: 400;
                 text-transform: uppercase;
@@ -219,6 +219,26 @@
                 top: 0;
                 /* left: 0; */
             }
+
+            .pricesymbol {
+                margin-left: 90px;
+                margin-top: -17px;
+                white-space: pre;
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: 14px;
+                font-weight: 900;
+                margin-right: 3px;
+            }
+
+            .pricetax {
+                margin-left: 140px;
+                margin-top: -20px;
+                white-space: pre;
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: 14px;
+                font-weight: 900;
+            }
+
         }
 
         @media only screen and (max-width:800px) {
@@ -236,11 +256,12 @@
             }
 
             .priceTitle {
-                margin-left: 135px;
-                margin-top: -18px;
+                margin-left: 97px;
+                margin-top: -17px;
                 white-space: pre;
-                font-family: Lato, sans-serif;
+                font-family: 'Noto Sans JP', sans-serif;
                 font-size: 14px;
+                font-weight: 900;
             }
 
             .column {
@@ -277,7 +298,7 @@
                 height: 18px;
                 line-height: 18px;
                 color: #fff;
-                font-family: Lato, sans-serif;
+                font-family: 'Noto Sans JP', sans-serif;
                 font-size: 11px;
                 font-weight: 400;
                 text-transform: uppercase;
@@ -286,6 +307,25 @@
                 position: absolute;
                 top: 8px;
                 /* left: 0; */
+            }
+
+            .pricesymbol {
+                margin-left: 90px;
+                margin-top: -17px;
+                white-space: pre;
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: 14px;
+                font-weight: 900;
+                margin-right: 3px;
+            }
+
+            .pricetax {
+                margin-left: 140px;
+                margin-top: -20px;
+                white-space: pre;
+                font-family: 'Noto Sans JP', sans-serif;
+                font-size: 14px;
+                font-weight: 900;
             }
         }
 
@@ -319,7 +359,10 @@
             <a href="brandDetail.html" class="name">Brand Listing Page</a>
         </div>
     </header>
-    
+<!-- hello-world.html -->
+<!-- <amp-script layout="container" src="http://localhost:8000/app.js">
+    <div id="hello" class="priceTitle"> {{sku.0.prices.0.price_ex_vat}}</div>
+  </amp-script> -->
     <amp-list layout="fixed-height" height="100" src="http://localhost:8000/brand_products.json"
         [src]="emptyListSampleSrc || 'http://localhost:8000/brand_products.json'" single-item items="." reset-on-refresh
         binding="no">
@@ -338,14 +381,16 @@
             <div class="row">
                 <a href="brandDetail.html">
                     <div class="column">
-                        <amp-img src="{{image_url}}" width="235" height="250" layout="responsive"></amp-img>
-                        
+                        <amp-img src="{{image_url}}" width="1" height="1" layout="responsive"></amp-img>
+
                 </a>
                 <div class="new-product">
-                        <div class="position-absolute ng-star-inserted">new</div>
+                    <div class="position-absolute ng-star-inserted">new</div>
                 </div>
                 <div class="brandname">{{brand.brand_name}}</div>
-                <div class="priceTitle"> {{sku.0.prices.0.price_ex_vat}}</div>
+                <div class="pricesymbol">¥</div>
+                <div class="priceTitle" id="myNumber"> {{sku.0.prices.0.price_ex_vat}}</div>
+                <div class="pricetax">(税抜)</div>
                 <p>{{item_name}}</p>
                 <div class="brandType">Men</div>
                 <div class="brandSize">S-XL</div>
