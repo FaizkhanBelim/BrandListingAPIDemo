@@ -2,404 +2,407 @@
 <html ⚡>
 
 <head>
-    <meta charset="utf-8">
-    <title>amp-list</title>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <!-- <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script> -->
-    <link rel="canonical" href="ampJson.html">
-    <!-- <script type="text/javascript" src="app.js"></script> -->
-    <meta name="amp-experiment-token" content="AAAAAFd7Im9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCIsImV4cGVyaW1lbnQiOiJhbXAtc2NyaXB0IiwiZXhwaXJhdGlvbiI6MTg5NjEzNDQwMDAwMH08Wb1WA4ZcsTLNK1pxwXdmfYUlv4ybtfIMw3yS66dZhsJl11JYrTanag4ZlAr4sfBRTVmQfKLsiJq/JJHdrpRzT9M6EQD/JYos1SlohtQiK2YfhvXgN7zot3WBuFkqoxSiyvX/l23UYKSo2ebNTnMDFhI+yrX8uc9BblbYniRtQGXBPktjJUIgavEBS5t45bgbPNutNvAreYGlz7na4lImrpnNa8K28Ow4hqOxcqqdFoHD9hlwtKlpydJQpEmtM+S+jdDLKWq6JtC+HoUSovuitrqkioJ4cfuVkFqtoaKWPLXSOwoc5UJl3zNjlTjvQ/Gnk33NdWs6/FtZbxCq+lWe">
+  <meta charset="utf-8">
+  <title>Product Listing Page</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+  <link rel="canonical" href="ampJson.html">
+  <meta name="amp-experiment-token"
+    content="AAAAAFd7Im9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCIsImV4cGVyaW1lbnQiOiJhbXAtc2NyaXB0IiwiZXhwaXJhdGlvbiI6MTg5NjEzNDQwMDAwMH08Wb1WA4ZcsTLNK1pxwXdmfYUlv4ybtfIMw3yS66dZhsJl11JYrTanag4ZlAr4sfBRTVmQfKLsiJq/JJHdrpRzT9M6EQD/JYos1SlohtQiK2YfhvXgN7zot3WBuFkqoxSiyvX/l23UYKSo2ebNTnMDFhI+yrX8uc9BblbYniRtQGXBPktjJUIgavEBS5t45bgbPNutNvAreYGlz7na4lImrpnNa8K28Ow4hqOxcqqdFoHD9hlwtKlpydJQpEmtM+S+jdDLKWq6JtC+HoUSovuitrqkioJ4cfuVkFqtoaKWPLXSOwoc5UJl3zNjlTjvQ/Gnk33NdWs6/FtZbxCq+lWe">
 
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>
+    body {
+      -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      animation: -amp-start 8s steps(1, end) 0s 1 normal both
+    }
+
+    @-webkit-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-moz-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-ms-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @-o-keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+
+    @keyframes -amp-start {
+      from {
+        visibility: hidden
+      }
+
+      to {
+        visibility: visible
+      }
+    }
+  </style><noscript>
     <style amp-boilerplate>
-        body {
-            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-            animation: -amp-start 8s steps(1, end) 0s 1 normal both
-        }
-
-        @-webkit-keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-
-        @-moz-keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-
-        @-ms-keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-
-        @-o-keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-
-        @keyframes -amp-start {
-            from {
-                visibility: hidden
-            }
-
-            to {
-                visibility: visible
-            }
-        }
-    </style><noscript>
-        <style amp-boilerplate>
-            body {
-                -webkit-animation: none;
-                -moz-animation: none;
-                -ms-animation: none;
-                animation: none
-            }
-        </style>
-    </noscript>
-    <style amp-custom>
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-        }
-
-        h1 {
-            font-family: 'Noto Sans JP', sans-serif;
-            margin-bottom: 0;
-        }
-
-        p {
-            font-size: 10px;
-            height: 35px;
-            overflow: hidden;
-            margin-bottom: 0;
-            /* max-height: 35px;
-            display: block;
-             clear: both;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical; 
-            color: #333; */
-        }
-
-        .column {
-            border: 5px solid white;
-            float: left;
-        }
-
-        .site-name {
-            flex: 1;
-            margin-left: -36px;
-        }
-
-        header {
-            background-color: #241754;
-            color: white;
-            font-size: 24px;
-            text-align: center;
-        }
-
-
-
-        .headerbar {
-            height: 50px;
-            z-index: 999;
-            top: 0;
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .titleItem {
-            font-size: 12px;
-            line-height: 1;
-        }
-
-        .name {
-            color: white;
-            text-decoration: none;
-        }
-
-        .priceTitle {
-            margin-left: 115px;
-            margin-top: -18px;
-        }
-
-        /* MEDIA QUERY START */
-
-        @media only screen and (max-width:500px) {
-
-            /* For mobile phones: */
-            .menu,
-            .column,
-            .right {
-                width: 50%;
-            }
-
-            .column {
-                width: 46%;
-                padding: 2px;
-                outline: 0;
-                -webkit-box-shadow: none;
-                box-shadow: none;
-            }
-
-            .titleItem {
-                font-size: 15px;
-                margin-left: 10px;
-                line-height: 1;
-            }
-
-            .priceTitle {
-                margin-left: 97px;
-                margin-top: -17px;
-                white-space: pre;
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 14px;
-                font-weight: 900;
-            }
-
-            .brandname {
-                margin-top: 10px;
-            }
-
-            .brandType {
-                font-size: 13px;
-                border: 1px solid #bbb;
-                display: inline-block;
-                padding: 0 3px;
-                line-height: 15px;
-                margin-left: 97px;
-                text-align: center;
-            }
-
-            .brandSize {
-                margin: 0 0 0 2px;
-                font-size: 13px;
-                display: inline-block;
-                padding: 0 3px;
-
-            }
-
-            .new-product {
-                background-color: #ba002f;
-                height: 18px;
-                line-height: 18px;
-                color: #fff;
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 11px;
-                font-weight: 400;
-                text-transform: uppercase;
-                padding: 0 6px;
-                display: inline-block;
-                position: absolute;
-                top: 0;
-                /* left: 0; */
-            }
-
-            .pricesymbol {
-                margin-left: 90px;
-                margin-top: -17px;
-                white-space: pre;
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 14px;
-                font-weight: 900;
-                margin-right: 3px;
-            }
-
-            .pricetax {
-                margin-left: 140px;
-                margin-top: -20px;
-                white-space: pre;
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 14px;
-                font-weight: 900;
-            }
-
-        }
-
-        @media only screen and (max-width:800px) {
-
-            /* For tablets: */
-            .column {
-                width: 0px;
-                padding: 0;
-            }
-
-            .titleItem {
-                font-size: 15px;
-                margin-left: 10px;
-                line-height: 1;
-            }
-
-            .priceTitle {
-                margin-left: 97px;
-                margin-top: -17px;
-                white-space: pre;
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 14px;
-                font-weight: 900;
-            }
-
-            .column {
-                width: 46%;
-                padding: 2px;
-                outline: 0;
-                -webkit-box-shadow: none;
-                box-shadow: none;
-            }
-
-            .brandname {
-                margin-top: 10px;
-            }
-
-            .brandType {
-                font-size: 13px;
-                border: 1px solid #bbb;
-                display: inline-block;
-                padding: 0 3px;
-                line-height: 15px;
-                margin-left: 97px;
-                text-align: center;
-            }
-
-            .brandSize {
-                margin: 0 0 0 2px;
-                font-size: 13px;
-                display: inline-block;
-                padding: 0 3px;
-            }
-
-            .new-product {
-                background-color: #ba002f;
-                height: 18px;
-                line-height: 18px;
-                color: #fff;
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 11px;
-                font-weight: 400;
-                text-transform: uppercase;
-                padding: 0 6px;
-                display: inline-block;
-                position: absolute;
-                top: 8px;
-                /* left: 0; */
-            }
-
-            .pricesymbol {
-                margin-left: 90px;
-                margin-top: -17px;
-                white-space: pre;
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 14px;
-                font-weight: 900;
-                margin-right: 3px;
-            }
-
-            .pricetax {
-                margin-left: 140px;
-                margin-top: -20px;
-                white-space: pre;
-                font-family: 'Noto Sans JP', sans-serif;
-                font-size: 14px;
-                font-weight: 900;
-            }
-        }
-
-        @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {
-
-            /* Styles */
-            .menu,
-            .column,
-            .right {
-                width: 100%;
-            }
-
-            .column {
-                width: 47%;
-                padding: 2px;
-                outline: 0;
-                -webkit-box-shadow: none;
-                box-shadow: none;
-            }
-
-            .brandname {
-                margin-top: 10px;
-            }
-        }
+      body {
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        animation: none
+      }
     </style>
+  </noscript>
+  <style amp-custom>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    h1 {
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 10px;
+      height: 35px;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .column {
+      border: 5px solid white;
+      float: left;
+      width: 19%;
+      position: relative;
+    }
+
+    .site-name {
+      flex: 1;
+      margin-left: -36px;
+    }
+
+    header {
+      background-color: #241754;
+      color: white;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .headerbar {
+      height: 50px;
+      z-index: 999;
+      top: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .name {
+      color: white;
+      text-decoration: none;
+    }
+
+    .new-product {
+      background-color: #ba002f;
+      height: 18px;
+      line-height: 18px;
+      color: #fff;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 0 6px;
+      display: inline-block;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+    }
+
+    .priceTitle {
+      margin-left: 97px;
+      margin-top: -17px;
+      white-space: pre;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .pricesymbol {
+      margin-left: 87px;
+      margin-top: -17px;
+      white-space: pre;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      margin-right: 3px;
+    }
+
+    .pricetax {
+      margin-left: 140px;
+      margin-top: -20px;
+      white-space: pre;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .brandType {
+      font-size: 13px;
+      border: 1px solid #bbb;
+      display: inline-block;
+      padding: 0 3px;
+      line-height: 15px;
+      margin-left: 97px;
+      text-align: center;
+    }
+
+    .brandSize {
+      margin: 0 0 0 2px;
+      font-size: 13px;
+      display: inline-block;
+      padding: 0 3px;
+    }
+
+
+    /* MEDIA QUERY START */
+
+    @media only screen and (max-width:500px) {
+
+      /* For mobile phones: */
+      .menu,
+      .column,
+      .right {
+        width: 50%;
+      }
+
+      .column {
+        width: 46%;
+        padding: 2px;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+
+      .priceTitle {
+        margin-left: 97px;
+        margin-top: -17px;
+        white-space: pre;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .brandname {
+        margin-top: 10px;
+      }
+
+      .brandType {
+        font-size: 13px;
+        border: 1px solid #bbb;
+        display: inline-block;
+        padding: 0 3px;
+        line-height: 15px;
+        margin-left: 97px;
+        text-align: center;
+      }
+
+      .brandSize {
+        margin: 0 0 0 2px;
+        font-size: 13px;
+        display: inline-block;
+        padding: 0 3px;
+
+      }
+
+      .new-product {
+        background-color: #ba002f;
+        height: 18px;
+        line-height: 18px;
+        color: #fff;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 0 6px;
+        display: inline-block;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+      }
+
+      .pricesymbol {
+        margin-left: 87px;
+        margin-top: -17px;
+        white-space: pre;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+        margin-right: 3px;
+      }
+
+      .pricetax {
+        margin-left: 140px;
+        margin-top: -20px;
+        white-space: pre;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+    }
+
+    @media only screen and (max-width:800px) {
+
+      /* For tablets: */
+
+      .priceTitle {
+        margin-left: 97px;
+        margin-top: -17px;
+        white-space: pre;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .column {
+        width: 46%;
+        padding: 2px;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+
+      .brandname {
+        margin-top: 10px;
+      }
+
+      .brandType {
+        font-size: 13px;
+        border: 1px solid #bbb;
+        display: inline-block;
+        padding: 0 3px;
+        line-height: 15px;
+        margin-left: 97px;
+        text-align: center;
+      }
+
+      .brandSize {
+        margin: 0 0 0 2px;
+        font-size: 13px;
+        display: inline-block;
+        padding: 0 3px;
+      }
+
+      .new-product {
+        background-color: #ba002f;
+        height: 18px;
+        line-height: 18px;
+        color: #fff;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 0 6px;
+        display: inline-block;
+        position: absolute;
+        top: 3px;
+        left: 3px;
+      }
+
+      .pricesymbol {
+        margin-left: 87px;
+        margin-top: -17px;
+        white-space: pre;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+        margin-right: 3px;
+      }
+
+      .pricetax {
+        margin-left: 135px;
+        margin-top: -20px;
+        white-space: pre;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header class="headerbar">
-        <div class="site-name" role="button" on="tap:sidebar1.toggle" tabindex="0">
-            <a href="brandDetail.html" class="name">Brand Listing Page</a>
-        </div>
-    </header>
-<!-- hello-world.html -->
-<!-- <amp-script layout="container" src="http://localhost:8000/app.js">
-    <div id="hello" class="priceTitle"> {{sku.0.prices.0.price_ex_vat}}</div>
-  </amp-script> -->
-    <amp-list layout="fixed-height" height="100" src="http://localhost:8000/brand_products.json"
-        [src]="emptyListSampleSrc || 'http://localhost:8000/brand_products.json'" single-item items="." reset-on-refresh
-        binding="no">
+  <header class="headerbar">
+    <div class="site-name" role="button" on="tap:sidebar1.toggle" tabindex="0">
+      <a href="brandDetail.html" class="name">Brand Listing Page</a>
+    </div>
+  </header>
 
-        <template type="amp-mustache">
+  <amp-list layout="fixed-height" height="100" src="http://localhost:8000/brand_products.json"
+    [src]="emptyListSampleSrc || 'http://localhost:8000/brand_products.json'" single-item items="." reset-on-refresh
+    binding="no">
 
-            {{#hits.hits}}
-            {{#_source}}
+    <template type="amp-mustache">
 
-            {{#sku}}
-            {{#prices}}
-            {{/prices}}
-            {{/sku}}
+      {{#hits.hits}}
+      {{#_source}}
 
-            {{#images}}
-            <div class="row">
-                <a href="brandDetail.html">
-                    <div class="column">
-                        <amp-img src="{{image_url}}" width="1" height="1" layout="responsive"></amp-img>
+      {{#sku}}
+      {{#prices}}
+      {{/prices}}
+      {{/sku}}
 
-                </a>
-                <div class="new-product">
-                    <div class="position-absolute ng-star-inserted">new</div>
-                </div>
-                <div class="brandname">{{brand.brand_name}}</div>
-                <div class="pricesymbol">¥</div>
-                <div class="priceTitle" id="myNumber"> {{sku.0.prices.0.price_ex_vat}}</div>
-                <div class="pricetax">(税抜)</div>
-                <p>{{item_name}}</p>
-                <div class="brandType">Men</div>
-                <div class="brandSize">S-XL</div>
-            </div>
-            {{/images}}
-            {{/_source}}
-            {{/hits.hits}}
-        </template>
-    </amp-list>
+      {{#images}}
+      <div class="row">
+        <a href="brandDetail.html">
+          <div class="column">
+            <amp-img src="{{image_url}}" width="1" height="1" layout="responsive"></amp-img>
+        </a>
+        <div class="new-product"> new </div>
+        <div class="brandname">{{brand.brand_name}}</div>
+        <div class="pricesymbol">¥</div>
+        <amp-script layout="container" src="http://localhost:8000/app.js">
+          <div id="number" class="priceTitle"> {{sku.0.prices.0.price_ex_vat}}</div>
+        </amp-script>
+        <div class="pricetax">(税抜)</div>
+        <p>{{item_name}}</p>
+        <div class="brandType">Men</div>
+        <div class="brandSize">S-XL</div>
+      </div>
+      {{/images}}
+      {{/_source}}
+      {{/hits.hits}}
+    </template>
+  </amp-list>
 
 </body>
 
