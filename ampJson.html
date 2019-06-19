@@ -192,6 +192,17 @@
       padding: 0 3px;
     }
 
+    .brandname {
+      margin-top: 10px;
+      max-width: 29px;
+      max-height: 22px;
+      width: auto;
+    }
+
+    .hide {
+      display: none;
+    }
+
 
     /* MEDIA QUERY START */
 
@@ -223,6 +234,9 @@
 
       .brandname {
         margin-top: 10px;
+        max-width: 29px;
+        max-height: 22px;
+        width: auto;
       }
 
       .brandType {
@@ -278,6 +292,9 @@
         font-weight: 900;
       }
 
+      .hide {
+        display: none;
+      }
     }
 
     @media only screen and (max-width:800px) {
@@ -356,6 +373,10 @@
         font-size: 14px;
         font-weight: 900;
       }
+
+      .hide {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -380,15 +401,18 @@
       {{#prices}}
       {{/prices}}
       {{/sku}}
-
       {{#images}}
       <div class="row">
         <a href="brandDetail.html">
           <div class="column">
-            <amp-img src="{{image_url}}" width="1" height="1" layout="responsive"></amp-img>
+            <amp-img src="{{image_url}}" width="250" height="310" layout="responsive"></amp-img>
         </a>
-        <div class="new-product"> new </div>
-        <div class="brandname">{{brand.brand_name}}</div>
+        <div class="new-product">new</div>
+        <!-- <div class="brandname">{{brand.brand_name}}</div> -->
+        <div class="brandname">
+          <amp-img src="https://s3-ap-northeast-1.amazonaws.com/ro-ec-data-prod/brands/0036.png" width="1" height="1"
+            layout="responsive"></amp-img>
+        </div>
         <div class="pricesymbol">¥</div>
         <amp-script layout="container" src="http://localhost:8000/app.js">
           <div id="number" class="priceTitle"> {{sku.0.prices.0.price_ex_vat}}</div>
